@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -25,12 +29,20 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: var(--primary-gradient);
   min-height: 100vh;
   color: var(--text-dark);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app {
