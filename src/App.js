@@ -1,5 +1,9 @@
 // src/App.js
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import './styles/App.css';
+import './styles/CodeInput.css';
+import './styles/CodeExplanation.css';
+import './styles/Components.css';
 import languageDetector from './services/languageDetection';
 import { useTheme } from './contexts/ThemeContext';
 import { useKeyboardShortcuts } from './contexts/KeyboardShortcutContext';
@@ -13,10 +17,7 @@ import SyntaxErrorDetector from './services/syntaxErrorDetector';
 import { SyntaxErrorDisplay } from './components/SyntaxErrorDisplay';
 import { FormatOptions } from './components/FormatOptions';
 import CodeFormatter from './services/codeFormatter';
-import './styles/App.css';
-import './styles/CodeInput.css';
-import './styles/CodeExplanation.css';
-import './styles/Components.css';
+
 
 export const CodeInput = ({ code, onCodeChange, onExplain,
    isLoading, textareaRef, fileInputRef,
