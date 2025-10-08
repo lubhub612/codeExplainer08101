@@ -1,0 +1,182 @@
+/* src/components/SyntaxErrorDisplay.css */
+.syntax-error-display {
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  margin: 16px 0;
+  background: white;
+  overflow: hidden;
+}
+
+.syntax-error-display.dark {
+  border-color: #444;
+  background: #1e1e1e;
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.syntax-error-display.dark .error-header {
+  background: #2d2d2d;
+  border-bottom-color: #444;
+}
+
+.error-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.syntax-error-display.dark .error-header h3 {
+  color: #d4d4d4;
+}
+
+.error-summary {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.error-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.error-item {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s ease;
+}
+
+.syntax-error-display.dark .error-item {
+  border-bottom-color: #333;
+}
+
+.error-item:last-child {
+  border-bottom: none;
+}
+
+.error-item:hover {
+  background: #f8f9fa;
+}
+
+.syntax-error-display.dark .error-item:hover {
+  background: #2d2d2d;
+}
+
+.error-item.error {
+  border-left: 4px solid #ef4444;
+}
+
+.error-item.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.error-icon {
+  font-size: 16px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-message {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.syntax-error-display.dark .error-message {
+  color: #d4d4d4;
+}
+
+.error-location {
+  font-weight: normal;
+  color: #6b7280;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.error-suggestion {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.syntax-error-display.dark .error-suggestion {
+  color: #999;
+}
+
+.error-type {
+  color: #9ca3af;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar styling */
+.error-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.error-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.syntax-error-display.dark .error-list::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.error-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.syntax-error-display.dark .error-list::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.error-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.syntax-error-display.dark .error-list::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .error-summary {
+    align-self: flex-end;
+  }
+  
+  .error-item {
+    padding: 10px 12px;
+  }
+  
+  .error-message {
+    font-size: 14px;
+  }
+  
+  .error-suggestion {
+    font-size: 13px;
+  }
+}

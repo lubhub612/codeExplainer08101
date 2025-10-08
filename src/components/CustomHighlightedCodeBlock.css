@@ -1,0 +1,280 @@
+/* src/components/CustomHighlightedCodeBlock.css */
+.custom-code-block {
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  background: white;
+  margin: 10px 0;
+  overflow: hidden;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.custom-code-block.dark {
+  border-color: #444;
+  background: #1e1e1e;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e1e5e9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.custom-code-block.dark .code-block-header {
+  background: #2d2d2d;
+  border-bottom-color: #444;
+}
+
+.language-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.custom-code-block.dark .language-badge {
+  color: #d4d4d4;
+}
+
+.language-icon {
+  font-size: 14px;
+}
+
+.copy-button {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.copy-button:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+}
+
+.copy-button.copied {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.custom-code-block.dark .copy-button {
+  background: #333;
+  color: white;
+  border-color: #555;
+}
+
+.custom-code-block.dark .copy-button:hover {
+  background: #444;
+}
+
+.code-block-content {
+  display: flex;
+  overflow: auto;
+  background: #f8f9fa;
+}
+
+.custom-code-block.dark .code-block-content {
+  background: #1e1e1e;
+}
+
+.line-numbers {
+  background: #f1f3f4;
+  padding: 16px 8px;
+  text-align: right;
+  color: #6c757d;
+  user-select: none;
+  border-right: 1px solid #e1e5e9;
+  min-width: 50px;
+}
+
+.custom-code-block.dark .line-numbers {
+  background: #252526;
+  color: #858585;
+  border-right-color: #444;
+}
+
+.line-number {
+  height: 21px;
+  line-height: 21px;
+  padding: 0 8px;
+}
+
+.code-pre {
+  margin: 0;
+  padding: 16px;
+  flex: 1;
+  overflow-x: auto;
+  tab-size: 2;
+  white-space: pre-wrap;
+}
+
+.code-pre.with-line-numbers {
+  padding-left: 8px;
+}
+
+/* Light Theme Token Colors */
+.custom-code-block.light .token.comment {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.custom-code-block.light .token.string {
+  color: #032f62;
+}
+
+.custom-code-block.light .token.keyword {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+.custom-code-block.light .token.number {
+  color: #005cc5;
+}
+
+.custom-code-block.light .token.function {
+  color: #6f42c1;
+}
+
+.custom-code-block.light .token.class {
+  color: #6f42c1;
+  font-weight: bold;
+}
+
+.custom-code-block.light .token.operator {
+  color: #d73a49;
+}
+
+.custom-code-block.light .token.punctuation {
+  color: #24292e;
+}
+
+.custom-code-block.light .token.tag {
+  color: #22863a;
+}
+
+.custom-code-block.light .token.attribute {
+  color: #6f42c1;
+}
+
+.custom-code-block.light .token.selector {
+  color: #e36209;
+}
+
+.custom-code-block.light .token.property {
+  color: #005cc5;
+}
+
+.custom-code-block.light .token.value {
+  color: #032f62;
+}
+
+/* Dark Theme Token Colors */
+.custom-code-block.dark .token.comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+.custom-code-block.dark .token.string {
+  color: #ce9178;
+}
+
+.custom-code-block.dark .token.keyword {
+  color: #569cd6;
+  font-weight: bold;
+}
+
+.custom-code-block.dark .token.number {
+  color: #b5cea8;
+}
+
+.custom-code-block.dark .token.function {
+  color: #dcdcaa;
+}
+
+.custom-code-block.dark .token.class {
+  color: #4ec9b0;
+  font-weight: bold;
+}
+
+.custom-code-block.dark .token.operator {
+  color: #d4d4d4;
+}
+
+.custom-code-block.dark .token.punctuation {
+  color: #d4d4d4;
+}
+
+.custom-code-block.dark .token.tag {
+  color: #569cd6;
+}
+
+.custom-code-block.dark .token.attribute {
+  color: #9cdcfe;
+}
+
+.custom-code-block.dark .token.selector {
+  color: #d7ba7d;
+}
+
+.custom-code-block.dark .token.property {
+  color: #9cdcfe;
+}
+
+.custom-code-block.dark .token.value {
+  color: #ce9178;
+}
+
+/* Inline code styling */
+.inline-code {
+  background: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+}
+
+.custom-code-block.dark .inline-code {
+  background: #2d2d2d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .code-block-header {
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .language-badge {
+    font-size: 11px;
+  }
+  
+  .copy-button {
+    align-self: flex-end;
+    font-size: 10px;
+  }
+  
+  .code-pre {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .line-numbers {
+    font-size: 13px;
+    min-width: 40px;
+  }
+}
