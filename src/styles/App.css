@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-*, *::before, *::after {
+*::before, *::after {
   box-sizing: border-box;
 }
 
@@ -27,6 +29,47 @@
   --border-radius: 12px;
   --border-radius-lg: 16px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Primary Colors */
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-active: #1d4ed8;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  
+  /* Border Colors */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  
+  /* Code Editor */
+  --editor-bg: #f8fafc;
+  --editor-border: #e2e8f0;
+  --line-number-bg: #f1f5f9;
+  --line-number-color: #64748b;
+  
+  /* Buttons */
+  --btn-primary-bg: #3b82f6;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f1f5f9;
+  --btn-secondary-text: #475569;
+  
+  /* Explanation Colors */
+  --explanation-bg: #f8fafc;
+  --explanation-border: #e2e8f0;
+  --code-bg: #f1f5f9;
+  
+  /* Status Colors */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
 }
 
 html, body, #root {
@@ -36,28 +79,36 @@ html, body, #root {
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+ /* font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; */
   background: var(--primary-gradient);
   min-height: 100vh;
-  color: var(--text-dark);
-  line-height: 1.6;
+ /* color: var(--text-dark);*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 .app {
   min-height: 100vh;
+  background-color: var(--bg-primary);
+  position: relative;
 }
 
 .app-header {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  padding: 3rem 0;
+  /*padding: 3rem 0;*/ 
   text-align: center;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+ /* border-bottom: 1px solid rgba(255, 255, 255, 0.2);*/
   position: relative;
   overflow: hidden;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
 }
 
 .app-header::before {
@@ -186,55 +237,6 @@ body {
   }
 }
 
-/* Update main app container for proper z-index */
-.app {
-  position: relative;
-}
-
-/* CSS Variables for Light Theme */
-:root {
-  /* Primary Colors */
-  --primary-color: #3b82f6;
-  --primary-hover: #2563eb;
-  --primary-active: #1d4ed8;
-  
-  /* Background Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
-  
-  /* Text Colors */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
-  
-  /* Border Colors */
-  --border-color: #e2e8f0;
-  --border-hover: #cbd5e1;
-  
-  /* Code Editor */
-  --editor-bg: #f8fafc;
-  --editor-border: #e2e8f0;
-  --line-number-bg: #f1f5f9;
-  --line-number-color: #64748b;
-  
-  /* Buttons */
-  --btn-primary-bg: #3b82f6;
-  --btn-primary-text: #ffffff;
-  --btn-secondary-bg: #f1f5f9;
-  --btn-secondary-text: #475569;
-  
-  /* Explanation Colors */
-  --explanation-bg: #f8fafc;
-  --explanation-border: #e2e8f0;
-  --code-bg: #f1f5f9;
-  
-  /* Status Colors */
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
-  --info-color: #3b82f6;
-}
 
 /* CSS Variables for Dark Theme */
 .dark-theme {
@@ -275,32 +277,6 @@ body {
   --code-bg: #0f172a;
 }
 
-/* Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-.app {
-  min-height: 100vh;
-  background-color: var(--bg-primary);
-}
-
-/* Header Styles */
-.app-header {
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
-}
 
 .header-content {
   max-width: 1200px;
@@ -322,16 +298,6 @@ body {
   font-size: 1rem;
 }
 
-/* Main Content */
-.app-main {
-  padding: 2rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
